@@ -56,6 +56,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\AddUserViewModel.cs" />
+    <Compile Include="ViewModels\DeleteUserViewModel.cs" />
+    <Compile Include="ViewModels\RetrieveCustomersViewModel.cs" />
+    <Compile Include="ViewModels\UpdateUserViewModel.cs" />
+    <Compile Include="Views\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteUser.xaml.cs">
+      <DependentUpon>DeleteUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RetrieveCustomers.xaml.cs">
+      <DependentUpon>RetrieveCustomers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateUser.xaml.cs">
+      <DependentUpon>UpdateUser.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DeleteUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,7 +92,9 @@
     <Compile Include="Dto\BaseRequestResponse.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\CustomerRequestDto.cs" />
+    <Compile Include="Dto\CustomerResponseDto.cs" />
     <Compile Include="Dto\IntResponse.cs" />
+    <Compile Include="Dto\Response.cs" />
     <Compile Include="Interfaces\IBaseRequestsHandler.cs" />
     <Compile Include="Interfaces\IModelMapper.cs" />
     <Compile Include="Mappers\CustomerMapper.cs" />
@@ -78,6 +104,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\RetrieveCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

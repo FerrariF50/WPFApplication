@@ -39,3 +39,11 @@ D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\BlankApp1.pdb
 D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\BlankApp1.csproj.AssemblyReference.cache
 D:\DevPace\WPFApplication\.vs\BlankApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 D:\DevPace\WPFApplication\.vs\BlankApp1\bin\Debug\System.ValueTuple.dll
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\AddUser.baml
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\AddUser.g.cs
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\DeleteUser.baml
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\UpdateUser.baml
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\DeleteUser.g.cs
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\UpdateUser.g.cs
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\RetrieveCustomers.baml
+D:\DevPace\WPFApplication\.vs\BlankApp1\obj\Debug\Views\RetrieveCustomers.g.cs

@@ -10,11 +10,12 @@ namespace BlankApp1.BaseHttpHandler
 {
     public class BaseRequestsHandler : IBaseRequestsHandler
     {
-        private readonly HttpClient _httpClient;
+        private static HttpClient _httpClient;
 
-        public BaseRequestsHandler(IHttpClientFactory httpClientFactory)
+        public BaseRequestsHandler()
         {
-            this._httpClient = httpClientFactory.CreateClient();
+            if (_httpClient == null)
+                _httpClient = new HttpClient();
         }
 
         public async Task<string> GetAsync(string url)

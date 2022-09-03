@@ -3,38 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525">
+        Title="{Binding Title}" Height="700" Width="800">
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Button Grid.Row="0" Content="Page 1" FontSize="12" Height="30" Margin="10"/>
-                    <Button Grid.Row="1" Content="Page 2" FontSize="12" Height="30"  Margin="10"/>
-                    <Button Grid.Row="2" Content="Page 3" FontSize="12" Height="30"  Margin="10"/>
-                </Grid>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Margin="10">
-                <DataGrid>
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" IsReadOnly="True" Binding="{Binding Customer.Id}"/>
-                        <DataGridTextColumn Header="Name" IsReadOnly="True" Width="50" Binding="{Binding Customer.Name}"/>
-                        <DataGridTextColumn Header="Company Name" IsReadOnly="True" Binding="{Binding Customer.CompanyName}"/>
-                        <DataGridTextColumn Header="Phone" IsReadOnly="True" Width="60" Binding="{Binding Customer.Phone}"/>
-                        <DataGridTextColumn Header="Email" IsReadOnly="True" Width="65" Binding="{Binding Customer.Email}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </StackPanel>
-        </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0"  Content="Add Customer" Command="{Binding AddCommand}" CommandParameter="AddUser" FontSize="12" Height="70" Margin="10"/>
+                <Button Grid.Row="1"  Content="Update Data" Command="{Binding UpdateCommand}" CommandParameter="UpdateUser" FontSize="12" Height="70"  Margin="10"/>
+                <Button Grid.Row="2"  Content="Delete Customer" Command="{Binding DeleteCommand}" CommandParameter="DeleteUser" FontSize="12" Height="70"  Margin="10"/>
+                <Button Grid.Row="3"  Content="Retrive Customers" Command="{Binding DeleteCommand}" CommandParameter="RetrieveCustomers" FontSize="12" Height="70"  Margin="10"/>
+            </Grid>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2">
+            <Label Content="Filters:" FontSize="15" FontWeight="Bold"/>
+            <ComboBox SelectedIndex="0" Margin="2,10">
+                <ComboBoxItem Content="Name"/>
+                <ComboBoxItem Content="Company"/>
+                <ComboBoxItem Content="Phone"/>
+                <ComboBoxItem Content="Email"/>
+            </ComboBox>
+        </StackPanel>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" Grid.Column="1"/>
     </Grid>
 </Window>

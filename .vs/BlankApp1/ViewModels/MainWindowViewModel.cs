@@ -1,28 +1,38 @@
-﻿using BlankApp1.Interfaces;
-using BlankApp1.Models;
+﻿using Prism.Commands;
 using Prism.Mvvm;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+using Prism.Regions;
 
 namespace BlankApp1.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        public Customer Customer { get; set; }
-        public ObservableCollection<Customer> Customers { get; set; }
-        private IBaseRequestsHandler _reqHandler;
-        public MainWindowViewModel(IBaseRequestsHandler reqHandler)
+        private readonly IRegionManager _regionManager;
+
+        public DelegateCommand<string> UpdateCommand { get; private set;}
+        public DelegateCommand<string> DeleteCommand { get; private set; }
+        public DelegateCommand<string> AddCommand { get; private set; }
+        public DelegateCommand<string> GetAllCustomerCommand { get; private set; }
+
+        public MainWindowViewModel(IRegionManager regionManager)
         {
-            Customer = new Customer();
-            this.Customers = new ObservableCollection<Customer>();
-            this._reqHandler = reqHandler;
-            Task.Factory.StartNew(async () => await LoadData());
-           
+            UpdateCommand = new DelegateCommand<string>(NavigateUpdate);
+            DeleteCommand = new DelegateCommand<string>(NavigateDelete);
+            AddCommand = new DelegateCommand<string>(NavigateAddCustumer);
+            this._regionManager = regionManager;
         }
 
-        private async Task LoadData()
+        private void NavigateUpdate(string path)
         {
-           
+            _regionManager.RequestNavigate("ContentRegion",path);
+        }
+        private void NavigateDelete(string path)
+        {
+            _regionManager.RequestNavigate("ContentRegion", path);
+        }
+
+        private void NavigateAddCustumer(string path)
+        {
+            _regionManager.RequestNavigate("ContentRegion", path);
         }
     }
 }
