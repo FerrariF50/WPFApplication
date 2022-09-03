@@ -1,6 +1,6 @@
 ﻿using BlankApp1.Dto;
+using BlankApp1.Interfaces;
 using BlankApp1.Models;
-using CORE.Common.Intefaces;
 using System.Collections.Generic;
 using System.Linq;
 

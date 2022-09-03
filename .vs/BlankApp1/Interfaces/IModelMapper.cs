@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace CORE.Common.Intefaces
+namespace BlankApp1.Interfaces
 {
     public interface IModelMapper<TSource,TResult>
     {
