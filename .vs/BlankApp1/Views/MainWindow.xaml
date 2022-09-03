@@ -27,11 +27,11 @@
             <StackPanel Grid.Column="1" Margin="10">
                 <DataGrid>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" IsReadOnly="True" Binding="{Binding Id}"/>
-                        <DataGridTextColumn Header="Name" IsReadOnly="True" Width="50" Binding="{Binding Name}"/>
-                        <DataGridTextColumn Header="Company Name" IsReadOnly="True" Binding="{Binding CompanyName}"/>
-                        <DataGridTextColumn Header="Phone" IsReadOnly="True" Width="60" Binding="{Binding Phone}"/>
-                        <DataGridTextColumn Header="Email" IsReadOnly="True" Width="65" Binding="{Binding Email}"/>
+                        <DataGridTextColumn Header="Id" IsReadOnly="True" Binding="{Binding Customer.Id}"/>
+                        <DataGridTextColumn Header="Name" IsReadOnly="True" Width="50" Binding="{Binding Customer.Name}"/>
+                        <DataGridTextColumn Header="Company Name" IsReadOnly="True" Binding="{Binding Customer.CompanyName}"/>
+                        <DataGridTextColumn Header="Phone" IsReadOnly="True" Width="60" Binding="{Binding Customer.Phone}"/>
+                        <DataGridTextColumn Header="Email" IsReadOnly="True" Width="65" Binding="{Binding Customer.Email}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
