@@ -18,16 +18,20 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Left" Content="Name:" FontSize="15"/>
-                    <Label Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Left" Content="Company Name:" FontSize="15"/>
-                    <Label Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Left" Content="Phone:" FontSize="15"/>
-                    <Label Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Left" Content="Email:" FontSize="15"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
-                    <Button Grid.Row="4" Content="Submit" HorizontalAlignment="Center" Margin="0,10,0,0"  VerticalAlignment="Bottom" Grid.ColumnSpan="2"></Button>
+                    <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Left" Content="Id:" FontSize="15"/>
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Left" Content="Name:" FontSize="15"/>
+                    <Label Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Left" Content="Company Name:" FontSize="15"/>
+                    <Label Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Left" Content="Phone:" FontSize="15"/>
+                    <Label Grid.Row="4" Grid.Column="0" HorizontalContentAlignment="Left" Content="Email:" FontSize="15"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Customer.CustomerId}" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Customer.Name,  Mode=TwoWay}"  FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Customer.CompanyName ,Mode=TwoWay}" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Customer.Phone , Mode=TwoWay}" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Customer.Email  ,Mode=TwoWay}" FontSize="15" Margin="10" HorizontalAlignment="Center" Width="100" BorderBrush="BlueViolet"/>
+                    <Button Grid.Row="5" Content="Submit" HorizontalAlignment="Center" Margin="0,10,0,0" Command="{Binding SubmitCommand}" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
                 </Grid>
             </StackPanel>
         </Border>

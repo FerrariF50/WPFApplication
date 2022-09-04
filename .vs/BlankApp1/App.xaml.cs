@@ -5,8 +5,6 @@ using BlankApp1.Mappers;
 using BlankApp1.Models;
 using BlankApp1.ViewModels;
 using BlankApp1.Views;
-using Microsoft.Extensions.DependencyInjection;
-using Prism.DryIoc;
 using Prism.Ioc;
 using System.Windows;
 
@@ -25,7 +23,7 @@ namespace BlankApp1
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<MainWindowViewModel>();
-            containerRegistry.Register<IModelMapper<Customer, CustomerDto>, CustomerMapper>();
+            containerRegistry.Register<IModelMapper<Customer, CustomerRequestDto>, CustomerMapper>();
             containerRegistry.Register<IBaseRequestsHandler, BaseRequestsHandler>();
             containerRegistry.RegisterForNavigation<AddUser, AddUserViewModel>();
             containerRegistry.RegisterForNavigation<DeleteUser, DeleteUserViewModel>();

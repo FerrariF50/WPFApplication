@@ -8,5 +8,6 @@ namespace BlankApp1.Interfaces
         Task<string> GetAsync(string url);
         Task AddAsync(string url, CustomerRequestDto dto);
         Task DeleteAsync(string url);
+        Task UpdateAsync(string url, CustomerRequestDto dto);
     }
 }

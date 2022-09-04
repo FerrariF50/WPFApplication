@@ -6,31 +6,31 @@ using System.Linq;
 
 namespace BlankApp1.Mappers
 {
-    public class CustomerMapper : IModelMapper<Customer, CustomerDto>
+    public class CustomerMapper : IModelMapper<Customer, CustomerRequestDto>
     {
-        public CustomerDto Map(Customer source)
+        public CustomerRequestDto Map(Customer source)
         {
             if (source == null)
             {
                 return null;
             }
 
-            return new CustomerDto
+            return new CustomerRequestDto
             {
-                CustomerId = source.Customerid,
-                CompanyName = source.Companyname,
+                CustomerId = source.CustomerId,
+                CompanyName = source.CompanyName,
                 Name = source.Name,
                 Email = source.Email,
                 Phone = source.Phone
             };
         }
 
-        public IEnumerable<CustomerDto> Map(IEnumerable<Customer> source)
+        public IEnumerable<CustomerRequestDto> Map(IEnumerable<Customer> source)
         {
-            return source == null ? new List<CustomerDto>() : source.Select(Map);
+            return source == null ? new List<CustomerRequestDto>() : source.Select(Map);
         }
 
-        public Customer ReverseMap(CustomerDto dto)
+        public Customer ReverseMap(CustomerRequestDto dto)
         {
             if (dto == null)
             {
@@ -39,15 +39,15 @@ namespace BlankApp1.Mappers
 
             return new Customer
             {
-                Customerid = dto.CustomerId,
+                CustomerId = dto.CustomerId,
                 Name = dto.Name,
-                Companyname = dto.CompanyName,
+                CompanyName = dto.CompanyName,
                 Email = dto.Email,
                 Phone = dto.Phone
             };
         }
 
-        public IEnumerable<Customer> ReverseMap(IEnumerable<CustomerDto> dto)
+        public IEnumerable<Customer> ReverseMap(IEnumerable<CustomerRequestDto> dto)
         {
             return dto == null ? new List<Customer>() : dto.Select(ReverseMap);
         }

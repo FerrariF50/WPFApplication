@@ -5,6 +5,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BlankApp1.BaseHttpHandler
 {
@@ -26,31 +27,62 @@ namespace BlankApp1.BaseHttpHandler
 
         public async Task AddAsync(string url, CustomerRequestDto dto)
         {
-            var obj = JsonConvert.SerializeObject(dto);
-            StringContent content = new StringContent(obj, Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync(url, content);
-            var result = JsonConvert.DeserializeObject<IntResponse>(await response.Content.ReadAsStringAsync());
-
-            if (result.HasError)
+            try
             {
-                throw new Exception("Customer not added");
+                var obj = JsonConvert.SerializeObject(dto);
+                StringContent content = new StringContent(obj, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync(url, content);
+                var result = JsonConvert.DeserializeObject<IntResponse>(await response.Content.ReadAsStringAsync());
+
+                if (result.HasError)
+                {
+                    MessageBox.Show(result.Error);
+                }
+                MessageBox.Show("User is added");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
+
         public async Task DeleteAsync(string url)
         {
-            await _httpClient.DeleteAsync(url);
+            try
+            {
+                var response = await _httpClient.DeleteAsync(url);
+
+                if ((int)response.StatusCode == 200)
+                {
+                    MessageBox.Show("Succesful user is deleted");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
         public async Task UpdateAsync(string url, CustomerRequestDto dto)
         {
-            var obj = JsonConvert.SerializeObject(dto);
-            StringContent content = new StringContent(obj, Encoding.UTF8, "application/json");
-            var response = await _httpClient.PutAsync(url, content);
-            var result = JsonConvert.DeserializeObject<IntResponse>(await response.Content.ReadAsStringAsync());
-
-            if (result.HasError)
+            try
             {
-                throw new Exception("User is not update");
+                var obj = JsonConvert.SerializeObject(dto);
+                StringContent content = new StringContent(obj, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PutAsync(url, content);
+                var result = JsonConvert.DeserializeObject<IntResponse>(await response.Content.ReadAsStringAsync());
+
+                if (result.HasError)
+                {
+                    MessageBox.Show(result.Error);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            MessageBox.Show("User is updated");
         }
     }
 }

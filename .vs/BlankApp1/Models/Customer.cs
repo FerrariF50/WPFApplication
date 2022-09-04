@@ -10,9 +10,9 @@ namespace BlankApp1.Models
         private string _phone;
         private string _email;
 
-        public int Customerid { get => _customerId; set => SetProperty(ref _customerId, value); }
+        public int CustomerId { get => _customerId; set => SetProperty(ref _customerId, value); }
         public string Name { get => _name; set => SetProperty(ref _name, value); }
-        public string Companyname { get => _comapnyName; set => SetProperty(ref _comapnyName, value); }
+        public string CompanyName { get => _comapnyName; set => SetProperty(ref _comapnyName, value); }
         public string Phone { get => _phone; set => SetProperty(ref _phone, value); }
         public string Email { get => _email; set => SetProperty(ref _email, value); }
     }

@@ -3,14 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="700" Width="800">
+        Title="{Binding Title}" Height="700" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
+        <StackPanel Grid.Column="0" Background="BlueViolet">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
@@ -18,22 +17,13 @@
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0"  Content="Add Customer" Command="{Binding AddCommand}" CommandParameter="AddUser" FontSize="12" Height="70" Margin="10"/>
+                <Button Grid.Row="0" Content="Add Customer" Command="{Binding AddCommand}" CommandParameter="AddUser" FontSize="12" Height="70" Margin="10"/>
                 <Button Grid.Row="1"  Content="Update Data" Command="{Binding UpdateCommand}" CommandParameter="UpdateUser" FontSize="12" Height="70"  Margin="10"/>
                 <Button Grid.Row="2"  Content="Delete Customer" Command="{Binding DeleteCommand}" CommandParameter="DeleteUser" FontSize="12" Height="70"  Margin="10"/>
-                <Button Grid.Row="3"  Content="Retrive Customers" Command="{Binding DeleteCommand}" CommandParameter="RetrieveCustomers" FontSize="12" Height="70"  Margin="10"/>
+                <Button Grid.Row="3"  Content="Retrive Customers" Command="{Binding GetAllCustomerCommand}" CommandParameter="RetrieveCustomers" FontSize="12" Height="70"  Margin="10"/>
             </Grid>
         </StackPanel>
-        
-        <StackPanel Grid.Column="2">
-            <Label Content="Filters:" FontSize="15" FontWeight="Bold"/>
-            <ComboBox SelectedIndex="0" Margin="2,10">
-                <ComboBoxItem Content="Name"/>
-                <ComboBoxItem Content="Company"/>
-                <ComboBoxItem Content="Phone"/>
-                <ComboBoxItem Content="Email"/>
-            </ComboBox>
-        </StackPanel>
+        <TextBlock Text="{Binding CompanyName, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" Grid.Column="1"/>
     </Grid>
 </Window>
