@@ -37,6 +37,7 @@ namespace BlankApp1.BaseHttpHandler
                 if (result.HasError)
                 {
                     MessageBox.Show(result.Error);
+                    return; 
                 }
                 MessageBox.Show("User is added");
             }
@@ -80,6 +81,7 @@ namespace BlankApp1.BaseHttpHandler
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return;
             }
 
             MessageBox.Show("User is updated");
